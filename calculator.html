@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Shippii Bookings | Add New Customer</title>
+    <title>Shippii Bookings | Calculator</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Poppins -->
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
         integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
         crossorigin="anonymous"></script>
@@ -31,8 +33,9 @@
                     <a href="admin.html" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
                         <i class="fas fa-chart-line fa-fw me-3"></i><span>Dashboard</span>
                     </a>
-                    <a class="list-group-item list-group-item-action py-2 ripple" data-mdb-toggle="collapse"
-                        href="#deliveries" role="button" aria-expanded="false" aria-controls="deliveries">
+                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiibookings"
+                        data-mdb-toggle="collapse" href="#deliveries" role="button" aria-expanded="false"
+                        aria-controls="deliveries">
                         <i class="fas fa-truck-pickup fa-fw me-3"></i><span>My Deliveries</span>
                     </a>
                     <div class="collapse mt-3" id="deliveries">
@@ -60,9 +63,8 @@
                             </li>
                         </ul>
                     </div>
-                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiibookings"
-                        data-mdb-toggle="collapse" href="#information" role="button" aria-expanded="false"
-                        aria-controls="information">
+                    <a class="list-group-item list-group-item-action py-2 ripple" data-mdb-toggle="collapse"
+                        href="#information" role="button" aria-expanded="false" aria-controls="information">
                         <i class="fas fa-info-circle fa-fw me-3"></i><span>My Information</span>
                     </a>
                     <div class="collapse mt-3" id="information">
@@ -106,7 +108,7 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand" href="#">
-                    <img src="./img/shippii-bookings.png" height="36" alt="" loading="lazy" />
+                    <img src="img/shippii-bookings.png" height="36" alt="" loading="lazy" />
                 </a>
                 <!-- Search form -->
                 <form class="d-none d-md-flex input-group w-auto my-auto">
@@ -157,119 +159,87 @@
     <!--Main layout-->
     <main style="margin-top: 58px">
         <div class="container pt-4">
-            <h3>Add New Customer</h3>
-            <!-- Section: Main chart -->
+            <h3>Calculator</h3>
 
-            <!-- Form Delivery -->
+            <!-- Form -->
             <section class="mt-4">
-
-                <h5 class="title-delivery mb-4">
-                    Customer Information
-                </h5>
-                <form action="submit" id="address" method="get">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Choose country:</option>
-                                <option value="1">Namibia</option>
-                                <option value="2">Botswana</option>
-                                <option value="3">Estiwana</option>
-                                <option value="3">South Africa</option>
-                            </select>
+                <form>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div class="form-outline">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choose country:</option>
+                                    <option value="1">Namibia</option>
+                                    <option value="2">Botswana</option>
+                                    <option value="3">Estiwana</option>
+                                    <option value="3">South Africa</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row mt-4">
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="surname" class="form-label">Recipient Name Surname</label>
-                            <input type="text" class="form-control" id="surname" placeholder="Recipient" required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="contact" class="form-label">Recipient Contact Number</label>
-                            <input type="text" class="form-control" id="contact" placeholder="Contact Number" required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="email" class="form-label">Recipient Contact Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="street" class="form-label">Street Address</label>
-                            <input type="email" class="form-control" id="street" placeholder="Street Address" required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="province" class="form-label">Province/State/Region</label>
-                            <input type="email" class="form-control" id="province" placeholder="Province" required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="city" class="form-label">City</label>
-                            <input type="email" class="form-control" id="city" placeholder="City" required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="suburb" class="form-label">Suburb/Town</label>
-                            <input type="email" class="form-control" id="suburb" placeholder="Suburb" required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="store" class="form-label">Store/Building Name</label>
-                            <input type="email" class="form-control" id="store" placeholder="Store" required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="house-number" class="form-label">Store/Unit/Office/House Number</label>
-                            <input type="email" class="form-control" id="house-number" placeholder="House Number"
-                                required>
-                        </div>
-                        <div class="col-12 col-md-6 mb-3">
-                            <label for="postal-code" class="form-label">Postal Code</label>
-                            <input type="email" class="form-control" id="postal-code" placeholder="Postal Code"
-                                required>
-                        </div>
-                        <div class="col-12 col-md-12 mb-5">
-                            <label for="comment" class="form-label">Comment</label>
-                            <textarea class="form-control" id="comment" rows="3"></textarea>
+                        <div class="col">
+                            <div class="form-outline">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Choose city:</option>
+                                    <option value="1">City</option>
+                                    <option value="2">City</option>
+                                    <option value="3">City</option>
+                                    <option value="4">City</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row mb-4">
-                        <div class="col-12 col-md-12">
-                            <button type="submit" class="btn btn-success btn-block">Save Address</button>
+                        <div class="col col-md-6">
+                            <div class="form-outline">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Parcel type</option>
+                                    <option value="1">Courier Bag</option>
+                                    <option value="2">Custom</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="row mb-4">
+                        <div class="col-12 color-orange">
+                            <h5>Fill this information if you choose Custom Parcel.</h5>
+                        </div>
+                        <div class="col-12 col-md-3 mb-4">
+                            <label for="weight" class="form-label">Weight</label>
+                            <input type="number" class="form-control" id="weight" placeholder="Kg" name="quantity" min="1">
+                        </div>
+                        <div class="col-12 col-md-3 mb-4">
+                            <label for="length" class="form-label">Length</label>
+                            <input type="number" class="form-control" id="length" placeholder="Cm" name="quantity" min="1">
+                        </div>
+                        <div class="col-12 col-md-3 mb-4">
+                            <label for="height" class="form-label">Height</label>
+                            <input type="number" class="form-control" id="height" placeholder="Cm" name="quantity" min="1">
+                        </div>
+                        <div class="col-12 col-md-3 mb-4">
+                            <label for="width" class="form-label">Width</label>
+                            <input type="number" class="form-control" id="width" placeholder="Cm" name="quantity" min="1">
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-success btn-block mb-4">Get An Estimate</button>
                 </form>
+            </section>
         </div>
     </main>
     <!--Main layout-->
     <!-- MDB -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript" src="js/admin.js"></script>
     <script>
-        $(".imgAdd").click(function () {
-            $(this).closest(".row").find('.imgAdd').before(
-                '<div class="col-sm-2 imgUp"><div class="imagePreview"></div><label class="btn btn-primary btn-block">Upload<input type="file" class="uploadFile img" value="Upload Photo" style="width:0px;height:0px;overflow:hidden;"></label><i class="fa fa-times del"></i></div>'
-            );
-        });
-        $(document).on("click", "i.del", function () {
-            $(this).parent().remove();
-        });
-        $(function () {
-            $(document).on("change", ".uploadFile", function () {
-                var uploadFile = $(this);
-                var files = !!this.files ? this.files : [];
-                if (!files.length || !window.FileReader)
-                    return; // no file selected, or no FileReader support
-
-                if (/^image/.test(files[0].type)) { // only image file
-                    var reader = new FileReader(); // instance of the FileReader
-                    reader.readAsDataURL(files[0]); // read the local file
-
-                    reader.onloadend = function () { // set image data as background of div
-                        //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
-                        uploadFile.closest(".imgUp").find('.imagePreview').css("background-image",
-                            "url(" + this.result + ")");
-                    }
-                }
-
-            });
-        });
+        let qty = document.querySelector("input[name='quantity']");
+        qty.addEventListener("change", function (event) {
+            if (this.value < 1) this.value = 1; // minimum is 1
+            else this.value = Math.floor(this.value); // only integers allowed
+        })
     </script>
 
 </body>

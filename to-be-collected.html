@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Shippii Plug | Inventory</title>
+    <title>Shippii Plug | To Be Collected</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Poppins -->
@@ -34,7 +34,7 @@
                     <a href="analytics.html" class="list-group-item list-group-item-action py-2" aria-current="true">
                         <i class="fas fa-book-open fa-fw me-3"></i><span>Analytics</span>
                     </a>
-                    <a class="list-group-item list-group-item-action py-2 ripple"
+                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiiplug"
                         data-mdb-toggle="collapse" href="#deliveries" role="button" aria-expanded="false"
                         aria-controls="deliveries">
                         <i class="fas fa-book-reader fa-fw me-3"></i><span>Orders</span>
@@ -52,7 +52,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiiplug" aria-current="true"
+                    <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
                         href="inventory.html">
                         <i class="fas fa-clipboard-list fa-fw me-3"></i><span>Inventory Management</span>
                     </a>
@@ -142,9 +142,39 @@
     <!--Main layout-->
     <main style="margin-top: 84px">
         <div class="container pt-4">
-            <h3>Inventory</h3>
+            <h3>Orders To Be Collected</h3>
             <section class="mb-4 mt-4">
-                ....
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="table-warning">
+                            <tr>
+                                <th scope="col">ORDER ID</th>
+                                <th scope="col">CUSTOMER NAME</th>
+                                <th scope="col">STATUS</th>
+                                <th scope="col">DATE</th>
+                                <th scope="col">ACTION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">978578987</th>
+                                <td>Sibusiso Khumalo</td>
+                                <td><span class="badge bg-warning">To Be Collected</span></td>
+                                <td>20 March 2022</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-outline-success mb-2"
+                                        data-mdb-toggle="modal" data-mdb-target="#orderToBeDelivered">
+                                        <i class="fas fa-eye"></i> view order
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-success mb-2"
+                                        data-mdb-toggle="modal" data-mdb-target="#orderToBeDispatched">
+                                        <i class="fas fa-eye"></i> pick up
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
     </main>
