@@ -34,9 +34,8 @@
                     <a href="analytics.html" class="list-group-item list-group-item-action py-2" aria-current="true">
                         <i class="fas fa-book-open fa-fw me-3"></i><span>Analytics</span>
                     </a>
-                    <a class="list-group-item list-group-item-action py-2 ripple"
-                        data-mdb-toggle="collapse" href="#deliveries" role="button" aria-expanded="false"
-                        aria-controls="deliveries">
+                    <a class="list-group-item list-group-item-action py-2 ripple" data-mdb-toggle="collapse"
+                        href="#deliveries" role="button" aria-expanded="false" aria-controls="deliveries">
                         <i class="fas fa-book-reader fa-fw me-3"></i><span>Orders</span>
                     </a>
                     <div class="collapse mt-3" id="deliveries">
@@ -143,8 +142,76 @@
     <main style="margin-top: 84px">
         <div class="container pt-4">
             <h3>Inventory</h3>
-            <section class="mb-4 mt-4">
-                ....
+            <section class="inventory-content mb-4 mt-4">
+                <div class="row mb-4 justify-content-end">
+                    <div class="col-4 col-md-2">
+                        <button type="button" class="btn btn-outline-warning">Download</button>
+                    </div>
+                    <div class="col-4 col-md-2">
+                        <button type="button" class="btn btn-outline-warning">Bulk Upload</button>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-3 col-md-2">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Filter by:</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-3 col-md-4">
+                        <!-- <form class="input-group w-auto my-auto">
+                            <input autocomplete="on" type="search" class="form-control rounded"
+                                placeholder='Search...' />
+                            <button class="btn btn-outline-secondary">go</button>
+                        </form> -->
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="table-warning">
+                            <tr>
+                                <th scope="col">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    </div>
+                                </th>
+                                <th scope="col">ITEM CODE</th>
+                                <th scope="col">PICTURE</th>
+                                <th scope="col">PRODUCT NAME</th>
+                                <th scope="col">COLOR/FLAVOUR</th>
+                                <th scope="col">SIZE</th>
+                                <th scope="col">SELLING PRICE / UNIT</th>
+                                <th scope="col">QUANTITY</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    </div>
+                                </th>
+                                <td>001</td>
+                                <td>Picture</td>
+                                <td>Zara Men</td>
+                                <td>
+                                    Black
+                                </td>
+                                <td>
+                                    Large
+                                </td>
+                                <td>
+                                    R 100
+                                </td>
+                                <td>
+                                    5
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
     </main>
