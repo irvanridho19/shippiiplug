@@ -34,9 +34,8 @@
                     <a href="analytics.html" class="list-group-item list-group-item-action py-2" aria-current="true">
                         <i class="fas fa-book-open fa-fw me-3"></i><span>Analytics</span>
                     </a>
-                    <a class="list-group-item list-group-item-action py-2 ripple"
-                        data-mdb-toggle="collapse" href="#deliveries" role="button" aria-expanded="false"
-                        aria-controls="deliveries">
+                    <a class="list-group-item list-group-item-action py-2 ripple" data-mdb-toggle="collapse"
+                        href="#deliveries" role="button" aria-expanded="false" aria-controls="deliveries">
                         <i class="fas fa-book-reader fa-fw me-3"></i><span>Orders</span>
                     </a>
                     <div class="collapse mt-3" id="deliveries">
@@ -60,8 +59,9 @@
                         href="customers.html">
                         <i class="fas fa-user-friends fa-fw me-3"></i><span>Customer Link</span>
                     </a>
-                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiiplug" data-mdb-toggle="collapse"
-                        href="#profile" role="button" aria-expanded="false" aria-controls="profile">
+                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiiplug"
+                        data-mdb-toggle="collapse" href="#profile" role="button" aria-expanded="false"
+                        aria-controls="profile">
                         <i class="fas fa-user-circle fa-fw me-3"></i><span>Profile</span>
                     </a>
                     <div class="collapse mt-3" id="profile">
@@ -144,7 +144,298 @@
         <div class="container pt-4">
             <h3>Profile</h3>
             <section class="mb-4 mt-4">
-                ....
+                <!-- Pills navs -->
+                <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#personalInformation"
+                            role="tab" aria-controls="personalInformation" aria-selected="true">Personal Information</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#paymentSettings" role="tab"
+                            aria-controls="paymentSettings" aria-selected="false">Payment Settings</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="tab-delivery" data-mdb-toggle="pill" href="#delivery-settings"
+                            role="tab" aria-controls="delivery-settings" aria-selected="false">Delivery Company
+                            Settings</a>
+                    </li>
+                </ul>
+                <!-- Pills navs -->
+
+                <!-- Pills content -->
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="personalInformation" role="tabpanel"
+                        aria-labelledby="tab-personalInformation">
+                        <form>
+                            <!-- Personal -->
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="title" class="form-label">Title</label>
+                                        <select class="form-select" aria-label="title">
+                                            <option selected>Choose Title</option>
+                                            <option value="1">Mr</option>
+                                            <option value="2">Mrs</option>
+                                            <option value="3">Ms</option>
+                                            <option value="4">Dr</option>
+                                            <option value="5">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Your name..">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="surname" class="form-label">Surname</label>
+                                        <input type="text" class="form-control" id="surname" placeholder="Surname..">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email & Store -->
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="storeEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="storeEmail"
+                                            placeholder="store@mail.com">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="storeName" class="form-label">Store Name</label>
+                                        <input type="text" class="form-control" id="storeName"
+                                            placeholder="Heavenly Shoes">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <div class="mb-3">
+                                        <label for="countryCode1" class="form-label">Country Code</label>
+                                        <input type="text" class="form-control" id="countryCode1" value="+27" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="contact" class="form-label">Contact Number</label>
+                                        <input type="text" class="form-control" id="contact"
+                                            placeholder="Your number...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <div class="mb-3">
+                                        <label for="countryCode1" class="form-label">Country Code</label>
+                                        <input type="text" class="form-control" id="countryCode1" value="+27" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="whatsapp" class="form-label">Whatsapp Number</label>
+                                        <input type="text" class="form-control" id="whatsapp"
+                                            placeholder="Your whatsapp number...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Location -->
+                            <div class="row mt-2 mb-2">
+                                <div class="col-12 col-md-12">
+                                    <h5>Business Location</h5>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="country" class="form-label">Country</label>
+                                        <select class="form-select" aria-label="country">
+                                            <option selected>Choose Country</option>
+                                            <option value="1">South Africa</option>
+                                            <option value="2">Estiwana</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="province" class="form-label">Province/State/Region</label>
+                                        <input type="text" class="form-control" id="province" placeholder="Hhohho">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" class="form-control" id="city" placeholder="Mbabane">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="suburb" class="form-label">Suburb/Town</label>
+                                        <input type="text" class="form-control" id="suburb" placeholder="Dalriach">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-success btn-block mb-4">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="paymentSettings" role="tabpanel" aria-labelledby="tab-payment">
+                        <form>
+                            <!-- Bank Account -->
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="mb-4">
+                                        <h5>EFT (Electronic Fund Transfer) Payment</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="bank" class="form-label">Bank Name</label>
+                                        <select class="form-select" aria-label="bank">
+                                            <option selected>Select Bank</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="accountName" class="form-label">Account Holder Name</label>
+                                        <input type="text" class="form-control" id="accountName" placeholder="Account name..">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="accountNumber" class="form-label">Account Number</label>
+                                        <input type="text" class="form-control" id="accountNumber" placeholder="Account number..">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="branchCode" class="form-label">Branch Code</label>
+                                        <input type="text" class="form-control" id="branchCode" placeholder="00012">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Payment -->
+                            <div class="row mt-4">
+                                <div class="col-12 col-md-12">
+                                    <div class="mb-4">
+                                        <h5>Mobile Money Payment</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <div class="mb-3">
+                                        <label for="countryCode1" class="form-label">Country Code</label>
+                                        <input type="text" class="form-control" id="countryCode1" value="+27" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="contact" class="form-label">Call Number</label>
+                                        <input type="text" class="form-control" id="contact"
+                                            placeholder="Your number...">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Proof -->
+                            <div class="row mt-4">
+                                <div class="col-12 col-md-12">
+                                    <div class="mb-4">
+                                        <h5>Proof of Payment Contact information</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-md-2">
+                                    <div class="mb-3">
+                                        <label for="countryCode2" class="form-label">Country Code</label>
+                                        <input type="text" class="form-control" id="countryCode2" value="+27" disabled>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="whatsappNumb" class="form-label">Whatsapp Number</label>
+                                        <input type="text" class="form-control" id="whatsappNumb"
+                                            placeholder="Your number...">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="emailPayment" class="form-label">Email Address</label>
+                                        <input type="text" class="form-control" id="emailPayment"
+                                            placeholder="mail@store.com">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-success btn-block mb-3">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="tab-pane fade" id="delivery-settings" role="tabpanel" aria-labelledby="tab-delivery">
+                        <form>
+                            <!-- Delivery -->
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="deliveryCompany" class="form-label">Delivery Company</label>
+                                        <select class="form-select" aria-label="deliveryCompany">
+                                            <option selected>Select Company</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="tracking" class="form-label">Live To Tracking Page</label>
+                                        <input type="text" class="form-control" id="tracking" placeholder="www.couriercompany.co.za">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <div class="mb-3">
+                                        <label for="companyNumber" class="form-label">Contact Number</label>
+                                        <input type="text" class="form-control" id="companyNumber" placeholder="1234">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 col-md-3">
+                                    <div class="mb-3">
+                                        <button class="btn btn-warning btn-block">Add Another Company</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-success btn-block mb-3">Save Changes</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Pills content -->
             </section>
         </div>
     </main>

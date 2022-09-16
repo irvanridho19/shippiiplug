@@ -143,12 +143,34 @@
         <div class="container pt-4">
             <h3>Customer Link</h3>
             <section class="mb-4 mt-4">
-                <div class="card text-center card-shippii">
-                    <div class="card-body">
-                        <h5 class="card-title">Your customer link</h5>
-                        <a href="#" class="btn btn-primary">Copy</a>
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="card text-center card-shippii">
+                            <div class="card-body">
+                                <h5 class="card-title">Your customer link</h5>
+                                <input class="form-control" type="text" placeholder="www.shipii.co?/SHI457"
+                                    aria-label="Merchant's Link" disabled>
+                                <button type="button" class="btn bg-success mt-4 text-white" id="liveToastBtn">Copy Link</button>
+
+                                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                                    <div id="liveToast" class="toast" role="alert" aria-live="assertive"
+                                        aria-atomic="true">
+                                        <div class="toast-header">
+                                            <strong class="me-auto">Shippii Plug</strong>
+                                            <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="toast-body">
+                                            Link has been copied to the clipboard
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-footer text-muted">Share link with your customers for them to place orders.
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer text-muted">Share link with your customers for them to place orders.</div>
                 </div>
             </section>
         </div>
@@ -156,9 +178,22 @@
     <!--Main layout-->
     <!-- MDB -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
     <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+        if (toastTrigger) {
+            toastTrigger.addEventListener('click', () => {
+                const toast = new bootstrap.Toast(toastLiveExample)
 
-
+                toast.show()
+            })
+        }
     </script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
