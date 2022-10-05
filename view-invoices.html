@@ -16,9 +16,17 @@
     <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="datepicker/jquery-ui.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
         integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
 </head>
 
 <body>
@@ -321,13 +329,19 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="amountPaid" class="form-label">Amount Paid</label>
-                                            <input type="text" class="form-control" id="amountPaid" placeholder="e.g R 500" value="R500">
+                                            <input type="text" class="form-control" id="amountPaid"
+                                                placeholder="e.g R 500" value="R500">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="datePaid" class="form-label">Date of Payment</label>
+                                            <input type="text" class="form-control" id="datepicker"
+                                                placeholder="Pick Date">
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-mdb-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-outline-info"
+                                            data-mdb-dismiss="modal">Back</button>
+                                        <button type="button" class="btn btn-success">Save</button>
                                     </div>
                                 </div>
                             </div>
@@ -346,15 +360,38 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="cancelLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="cancelLabel">Cancel Order
+                                            <span>#978578987</span></h5>
                                         <button type="button" class="btn-close" data-mdb-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-body">...</div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="invoiceTotal" class="form-label">Invoice Total</label>
+                                            <input type="text" class="form-control" id="invoiceTotal"
+                                                placeholder="label" disabled readonly value="R1230">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="previousPayment" class="form-label">Previous Payment
+                                                Received</label>
+                                            <input type="text" class="form-control" id="previousPayment"
+                                                placeholder="label" disabled readonly value="R0">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="amountDue" class="form-label">Amount Due</label>
+                                            <input type="text" class="form-control" id="amountDue" placeholder="label"
+                                                disabled readonly value="R1230">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reason" class="form-label">Reason for cancellation</label>
+                                            <textarea class="form-control" id="reason"
+                                                rows="2"></textarea>
+                                        </div>
+                                    </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-mdb-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-outline-info"
+                                            data-mdb-dismiss="modal">Back</button>
+                                        <button type="button" class="btn btn-danger">Cancel Order</button>
                                     </div>
                                 </div>
                             </div>
