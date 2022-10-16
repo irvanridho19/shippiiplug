@@ -102,7 +102,7 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand px-4" href="#">
-                    <img src="img/shippiiplug-logo.png" height="52" alt="Logo" loading="lazy" />
+                    <img src="img/shippii-plug-logo-new.png" height="32" alt="Logo" loading="lazy" />
                 </a>
                 <!-- Search form -->
                 <form class="d-none d-md-flex input-group w-auto my-auto">
@@ -159,7 +159,7 @@
                     <div class="col-12 col-md-6">
                         <div class="mb-3">
                             <label for="status" class="form-label">Status</label>
-                            <input class="form-control" type="text" value="Partially Paid" aria-label="Status Invoice"
+                            <input class="form-control" type="text" value="Cancelled Payment" aria-label="Status Invoice"
                                 disabled readonly>
                         </div>
                     </div>
@@ -243,160 +243,6 @@
                             </tbody>
                         </table>
                     </form>
-                </div>
-                <div class="row py-5">
-                    <div class="col-12 col-md-4">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success btn-block" data-mdb-toggle="modal"
-                            data-mdb-target="#paid">
-                            Paid
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="paid" tabindex="-1" aria-labelledby="paidLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="paidLabel">Paid <span>#978578987</span></h5>
-                                        <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="mb-3">
-                                            <label for="invoiceTotal" class="form-label">Invoice Total</label>
-                                            <input type="text" class="form-control" id="invoiceTotal"
-                                                placeholder="label" disabled readonly value="R300">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="previousPayment" class="form-label">Previous Payment
-                                                Received</label>
-                                            <input type="text" class="form-control" id="previousPayment"
-                                                placeholder="label" disabled readonly value="R300">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="amountDue" class="form-label">Amount Due</label>
-                                            <input type="text" class="form-control" id="amountDue" placeholder="label"
-                                                disabled readonly value="R0">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="amountPaid" class="form-label">Amount Paid</label>
-                                            <input type="text" class="form-control" id="amountPaid" placeholder="label"
-                                                disabled readonly value="R0">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-success"
-                                            data-mdb-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-warning btn-block" data-mdb-toggle="modal"
-                            data-mdb-target="#partiallypaid">
-                            Partially Paid
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="partiallypaid" tabindex="-1" aria-labelledby="partiallypaidLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="partiallypaidLabel">Partially Paid
-                                            <span>#978578987</span></h5>
-                                        <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="mb-3">
-                                            <label for="invoiceTotal" class="form-label">Invoice Total</label>
-                                            <input type="text" class="form-control" id="invoiceTotal"
-                                                placeholder="label" disabled readonly value="R948">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="previousPayment" class="form-label">Previous Payment
-                                                Received</label>
-                                            <input type="text" class="form-control" id="previousPayment"
-                                                placeholder="label" disabled readonly value="R300">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="amountDue" class="form-label">Amount Due</label>
-                                            <input type="text" class="form-control" id="amountDue" placeholder="label"
-                                                disabled readonly value="R548">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="amountPaid" class="form-label">Amount Paid</label>
-                                            <input type="text" class="form-control" id="amountPaid"
-                                                placeholder="e.g R 500" value="R500">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="datePaid" class="form-label">Date of Payment</label>
-                                            <input type="text" class="form-control" id="datepicker"
-                                                placeholder="Pick Date">
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-info"
-                                            data-mdb-dismiss="modal">Back</button>
-                                        <button type="button" class="btn btn-success">Save</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger btn-block" data-mdb-toggle="modal"
-                            data-mdb-target="#cancel">
-                            Cancel
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="cancel" tabindex="-1" aria-labelledby="cancelLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="cancelLabel">Cancel Order
-                                            <span>#978578987</span></h5>
-                                        <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="mb-3">
-                                            <label for="invoiceTotal" class="form-label">Invoice Total</label>
-                                            <input type="text" class="form-control" id="invoiceTotal"
-                                                placeholder="label" disabled readonly value="R1230">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="previousPayment" class="form-label">Previous Payment
-                                                Received</label>
-                                            <input type="text" class="form-control" id="previousPayment"
-                                                placeholder="label" disabled readonly value="R0">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="amountDue" class="form-label">Amount Due</label>
-                                            <input type="text" class="form-control" id="amountDue" placeholder="label"
-                                                disabled readonly value="R1230">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="reason" class="form-label">Reason for cancellation</label>
-                                            <textarea class="form-control" id="reason"
-                                                rows="2"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-info"
-                                            data-mdb-dismiss="modal">Back</button>
-                                        <button type="button" class="btn btn-danger">Cancel Order</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
         </div>

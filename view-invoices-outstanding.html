@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Shippii Plug | Invoice</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <!-- Google Fonts Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="datepicker/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+        integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+</head>
+
+<body>
+    <!--Main Navigation-->
+    <header>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white" style="overflow-y: scroll;">
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-5">
+                    <a href="admin.html" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fas fa-chart-line fa-fw me-3"></i><span>Dashboard</span>
+                    </a>
+                    <a href="analytics.html" class="list-group-item list-group-item-action py-2" aria-current="true">
+                        <i class="fas fa-book-open fa-fw me-3"></i><span>Analytics</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action py-2 ripple" data-mdb-toggle="collapse"
+                        href="#deliveries" role="button" aria-expanded="false" aria-controls="deliveries">
+                        <i class="fas fa-book-reader fa-fw me-3"></i><span>Orders</span>
+                    </a>
+                    <div class="collapse mt-3" id="deliveries">
+                        <ul class="navbar">
+                            <li class="nav-link">
+                                <a href="all-orders.html" class="color-green">All Orders</a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="to-be-delivered.html" class="color-green">To Be Delivered</a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="to-be-collected.html" class="color-green">To Be Collected</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiiplug" aria-current="true"
+                        href="invoices.html">
+                        <i class="fas fa-paperclip fa-fw me-3"></i><span>Invoices</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
+                        href="inventory.html">
+                        <i class="fas fa-clipboard-list fa-fw me-3"></i><span>Inventory Management</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
+                        href="customers.html">
+                        <i class="fas fa-user-friends fa-fw me-3"></i><span>Customer Link</span>
+                    </a>
+                    <a class="list-group-item list-group-item-action py-2 ripple" data-mdb-toggle="collapse"
+                        href="#profile" role="button" aria-expanded="false" aria-controls="profile">
+                        <i class="fas fa-user-circle fa-fw me-3"></i><span>Profile</span>
+                    </a>
+                    <div class="collapse mt-3" id="profile">
+                        <ul class="navbar">
+                            <li class="nav-link">
+                                <a href="profile.html" class="color-green">Profile</a>
+                            </li>
+                            <li class="nav-link">
+                                <a href="address.html" class="color-green">Address Book</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Sidebar -->
+
+        <!-- Navbar -->
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#sidebarMenu"
+                    aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Brand -->
+                <a class="navbar-brand px-4" href="#">
+                    <img src="img/shippii-plug-logo-new.png" height="32" alt="Logo" loading="lazy" />
+                </a>
+                <!-- Search form -->
+                <form class="d-none d-md-flex input-group w-auto my-auto">
+                    <input autocomplete="off" type="search" class="form-control rounded"
+                        placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px" />
+                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                </form>
+
+                <!-- Right links -->
+                <ul class="navbar-nav ms-auto d-flex flex-row">
+                    <!-- Notification dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Some news</a></li>
+                            <li><a class="dropdown-item" href="#">Another news</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- Avatar -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle"
+                                height="22" alt="" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">My profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main style="margin-top: 84px">
+        <div class="container pt-4">
+            <h3>Invoice <span>#978578987</span></h3>
+            <section class="mb-4 mt-4 invoice-status">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <input class="form-control" type="text" value="Outstanding Payment" aria-label="Status Invoice"
+                                disabled readonly>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount Due</label>
+                            <input class="form-control" type="text" value="R586" aria-label="Amount Due" disabled
+                                readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <form action="submit" id="formAccept">
+                        <table class="table align-middle mb-0 bg-white">
+                            <thead class="table-warning">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Product</th>
+                                    <th>Color</th>
+                                    <th>Size</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="img/default-product.jpeg" alt="" style="width: 45px; height: 45px"
+                                                class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">[Product Name]</p>
+                                                <p class="text-muted mb-0">
+                                                    [short description]</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        White
+                                    </td>
+                                    <td>Large</td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        R 200
+                                    </td>
+                                    <td>
+                                        R 600
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="img/default-product.jpeg" alt="" style="width: 45px; height: 45px"
+                                                class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">[Product Name]</p>
+                                                <p class="text-muted mb-0">
+                                                    [short description]</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        White
+                                    </td>
+                                    <td>Large</td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        R 200
+                                    </td>
+                                    <td>
+                                        R 600
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="row py-5 justify-content-center align-items-center">
+                    <div class="col-12 col-md-4">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success btn-block" data-mdb-toggle="modal"
+                            data-mdb-target="#partiallypaid">
+                            Add Payment
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="partiallypaid" tabindex="-1" aria-labelledby="partiallypaidLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="partiallypaidLabel">Add Payment
+                                            <span>#978578987</span></h5>
+                                        <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="invoiceTotal" class="form-label">Invoice Total</label>
+                                            <input type="text" class="form-control" id="invoiceTotal"
+                                                placeholder="label" disabled readonly value="R948">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="previousPayment" class="form-label">Previous Payment
+                                                Received</label>
+                                            <input type="text" class="form-control" id="previousPayment"
+                                                placeholder="label" disabled readonly value="R300">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="amountDue" class="form-label">Amount Due</label>
+                                            <input type="text" class="form-control" id="amountDue" placeholder="label"
+                                                disabled readonly value="R548">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="amountPaid" class="form-label">Amount Paid</label>
+                                            <input type="text" class="form-control" id="amountPaid"
+                                                placeholder="e.g R 500" value="R500">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="datePaid" class="form-label">Date of Payment</label>
+                                            <input type="text" class="form-control" id="datepicker"
+                                                placeholder="Pick Date">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-info"
+                                            data-mdb-dismiss="modal">Back</button>
+                                        <button type="button" class="btn btn-success">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-danger btn-block" data-mdb-toggle="modal"
+                            data-mdb-target="#cancel">
+                            Cancel
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="cancel" tabindex="-1" aria-labelledby="cancelLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="cancelLabel">Cancel Order
+                                            <span>#978578987</span></h5>
+                                        <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="invoiceTotal" class="form-label">Invoice Total</label>
+                                            <input type="text" class="form-control" id="invoiceTotal"
+                                                placeholder="label" disabled readonly value="R1230">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="previousPayment" class="form-label">Previous Payment
+                                                Received</label>
+                                            <input type="text" class="form-control" id="previousPayment"
+                                                placeholder="label" disabled readonly value="R0">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="amountDue" class="form-label">Amount Due</label>
+                                            <input type="text" class="form-control" id="amountDue" placeholder="label"
+                                                disabled readonly value="R1230">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="reason" class="form-label">Reason for cancellation</label>
+                                            <textarea class="form-control" id="reason"
+                                                rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-info"
+                                            data-mdb-dismiss="modal">Back</button>
+                                        <button type="button" class="btn btn-danger">Cancel Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!--Main layout-->
+    <!-- MDB -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+
+    </script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="js/admin.js"></script>
+
+</body>
+
+</html>

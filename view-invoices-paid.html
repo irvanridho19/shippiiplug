@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Shippii Plug | Customer Link</title>
+    <title>Shippii Plug | Invoice</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Poppins -->
@@ -16,9 +16,17 @@
     <link rel="stylesheet" href="css/mdb.min.css" />
     <!-- Custom styles -->
     <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="datepicker/jquery-ui.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
         integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
 </head>
 
 <body>
@@ -51,7 +59,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
+                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiiplug" aria-current="true"
                         href="invoices.html">
                         <i class="fas fa-paperclip fa-fw me-3"></i><span>Invoices</span>
                     </a>
@@ -59,7 +67,7 @@
                         href="inventory.html">
                         <i class="fas fa-clipboard-list fa-fw me-3"></i><span>Inventory Management</span>
                     </a>
-                    <a class="list-group-item list-group-item-action py-2 ripple active-shippiiplug" aria-current="true"
+                    <a class="list-group-item list-group-item-action py-2 ripple" aria-current="true"
                         href="customers.html">
                         <i class="fas fa-user-friends fa-fw me-3"></i><span>Customer Link</span>
                     </a>
@@ -145,34 +153,142 @@
     <!--Main layout-->
     <main style="margin-top: 84px">
         <div class="container pt-4">
-            <h3>Customer Link</h3>
-            <section class="mb-4 mt-4">
+            <h3>Invoice <span>#978578987</span></h3>
+            <section class="mb-4 mt-4 invoice-status">
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <div class="card text-center card-shippii">
-                            <div class="card-body">
-                                <h5 class="card-title">Your customer link</h5>
-                                <input class="form-control" type="text" placeholder="www.shipii.co?/SHI457"
-                                    aria-label="Merchant's Link" disabled>
-                                <button type="button" class="btn bg-success mt-4 text-white" id="liveToastBtn">Copy
-                                    Link</button>
-
-                                <div class="toast-container position-fixed bottom-0 end-0 p-3">
-                                    <div id="liveToast" class="toast" role="alert" aria-live="assertive"
-                                        aria-atomic="true">
-                                        <div class="toast-header">
-                                            <strong class="me-auto">Shippii Plug</strong>
-                                            <button type="button" class="btn-close" data-bs-dismiss="toast"
-                                                aria-label="Close"></button>
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <input class="form-control" type="text" value="Paid" aria-label="Status Invoice"
+                                disabled readonly>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="mb-3">
+                            <label for="amount" class="form-label">Amount Due</label>
+                            <input class="form-control" type="text" value="R586" aria-label="Amount Due" disabled
+                                readonly>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <form action="submit" id="formAccept">
+                        <table class="table align-middle mb-0 bg-white">
+                            <thead class="table-warning">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Product</th>
+                                    <th>Color</th>
+                                    <th>Size</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="img/default-product.jpeg" alt="" style="width: 45px; height: 45px"
+                                                class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">[Product Name]</p>
+                                                <p class="text-muted mb-0">
+                                                    [short description]</p>
+                                            </div>
                                         </div>
-                                        <div class="toast-body">
-                                            Link has been copied to the clipboard
+                                    </td>
+                                    <td>
+                                        White
+                                    </td>
+                                    <td>Large</td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        R 200
+                                    </td>
+                                    <td>
+                                        R 600
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="img/default-product.jpeg" alt="" style="width: 45px; height: 45px"
+                                                class="rounded-circle" />
+                                            <div class="ms-3">
+                                                <p class="fw-bold mb-1">[Product Name]</p>
+                                                <p class="text-muted mb-0">
+                                                    [short description]</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        White
+                                    </td>
+                                    <td>Large</td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                        R 200
+                                    </td>
+                                    <td>
+                                        R 600
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <div class="row py-5 align-items-center justify-content-center">
+                    <div class="col-12 col-md-4">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-success btn-block" data-mdb-toggle="modal"
+                            data-mdb-target="#paid">
+                            Paid
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="paid" tabindex="-1" aria-labelledby="paidLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="paidLabel">Paid <span>#978578987</span></h5>
+                                        <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="invoiceTotal" class="form-label">Invoice Total</label>
+                                            <input type="text" class="form-control" id="invoiceTotal"
+                                                placeholder="label" disabled readonly value="R300">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="previousPayment" class="form-label">Previous Payment
+                                                Received</label>
+                                            <input type="text" class="form-control" id="previousPayment"
+                                                placeholder="label" disabled readonly value="R300">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="amountDue" class="form-label">Amount Due</label>
+                                            <input type="text" class="form-control" id="amountDue" placeholder="label"
+                                                disabled readonly value="R0">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="amountPaid" class="form-label">Amount Paid</label>
+                                            <input type="text" class="form-control" id="amountPaid" placeholder="label"
+                                                disabled readonly value="R0">
                                         </div>
                                     </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-outline-success"
+                                            data-mdb-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
-
-                            </div>
-                            <div class="card-footer text-muted">Share link with your customers for them to place orders.
                             </div>
                         </div>
                     </div>
@@ -183,22 +299,9 @@
     <!--Main layout-->
     <!-- MDB -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
     <script>
-        const toastTrigger = document.getElementById('liveToastBtn')
-        const toastLiveExample = document.getElementById('liveToast')
-        if (toastTrigger) {
-            toastTrigger.addEventListener('click', () => {
-                const toast = new bootstrap.Toast(toastLiveExample)
 
-                toast.show()
-            })
-        }
+
     </script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
