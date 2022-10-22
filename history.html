@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Shippii Plug | To Be Delivered</title>
+    <title>Shippii Plug | History Orders</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
     <!-- Google Fonts Poppins -->
@@ -149,7 +149,7 @@
     <!--Main layout-->
     <main style="margin-top: 84px">
         <div class="container pt-4">
-            <h3>Orders To Be Delivered</h3>
+            <h3>History Orders</h3>
             <section class="mb-4 mt-4">
                 <div class="table-responsive">
                     <table class="table">
@@ -166,25 +166,20 @@
                             <tr>
                                 <th scope="row">978578987</th>
                                 <td>Sibusiso Khumalo</td>
-                                <td><span class="badge bg-warning">To Be Delivered</span></td>
+                                <td><span class="badge bg-success">Completed</span></td>
                                 <td>20 March 2022</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-outline-success mb-2"
-                                        data-mdb-toggle="modal" data-mdb-target="#orderToBeDelivered">
+                                        data-mdb-toggle="modal" data-mdb-target="#order">
                                         <i class="fas fa-eye"></i> view order
                                     </button>
-                                    <button type="button" class="btn btn-sm btn-outline-success mb-2"
-                                        data-mdb-toggle="modal" data-mdb-target="#orderToBeDispatched">
-                                        <i class="fas fa-eye"></i> dispatched
-                                    </button>
                                     <!-- Modal orderToBeDelivered Accepted -->
-                                    <div class="modal fade" id="orderToBeDelivered" tabindex="-1"
-                                        aria-labelledby="orderToBeDeliveredLabel" aria-hidden="true">
+                                    <div class="modal fade" id="order" tabindex="-1"
+                                        aria-labelledby="orderLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="orderToBeDeliveredLabel">Order To Be
-                                                        Delivered <span class="color-orange">#978578987</span></h5>
+                                                    <h5 class="modal-title" id="orderLabel">Order Succeed <span class="color-orange">#978578987</span></h5>
                                                     <button type="button" class="btn-close" data-mdb-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
@@ -197,7 +192,7 @@
                                                                         <th>No</th>
                                                                         <th>Product</th>
                                                                         <th>Color</th>
-                                                                        <th>Size</th>
+                                                                        <th>Product Type</th>
                                                                         <th>Quantity</th>
                                                                         <th>Normal Selling Price</th>
                                                                         <th>Discount</th>
@@ -309,78 +304,26 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal fade" id="orderToBeDispatched" tabindex="-1"
-                                        aria-labelledby="orderToBeDispatchedLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="orderToBeDispatchedLabel">Order To Be
-                                                        Dispatched <span class="color-orange">#978578987</span></h5>
-                                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="alert alert-warning" role="alert">
-                                                        Order Dispatched?
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-outline-success"
-                                                        data-mdb-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-danger">No</button>
-                                                    <button type="submit" class="btn btn-success">Yes</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal fade" id="orderDelivered" tabindex="-1"
-                                        aria-labelledby="orderDeliveredLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="orderDeliveredLabel">Order To Be
-                                                        Deivered <span class="color-orange">#978578987</span></h5>
-                                                    <button type="button" class="btn-close" data-mdb-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="alert alert-warning" role="alert">
-                                                        Order Delivered?
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-outline-success"
-                                                        data-mdb-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-danger">No</button>
-                                                    <button type="submit" class="btn btn-success">Yes</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <th scope="row">978578987</th>
                                 <td>Sibusiso Khumalo</td>
-                                <td><span class="badge bg-success">Order Dispatched</span></td>
-                                <td>20 March 2022</td>
+                                <td><span class="badge bg-danger">Order Cancelled</span></td>
+                                <td>18 March 2022</td>
                                 <td>
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-sm btn-outline-success mb-2"
-                                        data-mdb-toggle="modal" data-mdb-target="#orderDispatched">
+                                        data-mdb-toggle="modal" data-mdb-target="#orderCancelled">
                                         <i class="fas fa-eye"></i> view order
                                     </button>
-                                    <button type="button" class="btn btn-sm btn-outline-success mb-2"
-                                        data-mdb-toggle="modal" data-mdb-target="#orderDelivered">
-                                        <i class="fas fa-eye"></i> delivered
-                                    </button>
                                     <!-- Modal Order Accepted -->
-                                    <div class="modal fade" id="orderDispatched" tabindex="-1"
-                                        aria-labelledby="orderDispatchedLabel" aria-hidden="true">
+                                    <div class="modal fade" id="orderCancelled" tabindex="-1"
+                                        aria-labelledby="orderCancelledLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="orderDispatchedLabel">Order Dispatched
+                                                    <h5 class="modal-title" id="orderCancelledLabel">Order Cancelled
                                                     </h5>
                                                     <button type="button" class="btn-close" data-mdb-dismiss="modal"
                                                         aria-label="Close"></button>
@@ -392,7 +335,7 @@
                                                                 <th>No</th>
                                                                 <th>Product</th>
                                                                 <th>Color</th>
-                                                                <th>Size</th>
+                                                                <th>Product Type</th>
                                                                 <th>Quantity</th>
                                                                 <th>Normal Selling Price</th>
                                                                 <th>Discount</th>
